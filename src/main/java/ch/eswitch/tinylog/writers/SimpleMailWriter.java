@@ -66,6 +66,10 @@ public class SimpleMailWriter extends AbstractFormatPatternWriter
      * multiple strings can be separated by {@value #TOKEN_DELIMITER}
      */
     private static final String PROPERTY_FILTER_EXCLUDE = PROPERTY_FILTER + "exclude";
+    /**
+     * time in seconds to wait for {@link ExecutorService#awaitTermination(long, TimeUnit)} in {@link #close()} method
+     */
+    private static final long CLOSE_WAIT_SECONDS = 30;
 
     /**
      * buffered {@link LogEntry} which should be sent in next mail
@@ -119,8 +123,9 @@ public class SimpleMailWriter extends AbstractFormatPatternWriter
             {
                 smp.put(key, value);
 
-                if (key.equalsIgnoreCase(ConfigLoader.Property.SMTP_PASSWORD.key()) || key.equalsIgnoreCase(ConfigLoader.Property.PROXY_PASSWORD.key()) || key.equalsIgnoreCase(
-                        ConfigLoader.Property.SMIME_SIGNING_KEYSTORE_PASSWORD.key()) || key.equalsIgnoreCase(ConfigLoader.Property.SMIME_SIGNING_KEY_PASSWORD.key()))
+                if (!key.startsWith("${")
+                        && (key.equalsIgnoreCase(ConfigLoader.Property.SMTP_PASSWORD.key()) || key.equalsIgnoreCase(ConfigLoader.Property.PROXY_PASSWORD.key()) || key.equalsIgnoreCase(
+                        ConfigLoader.Property.SMIME_SIGNING_KEYSTORE_PASSWORD.key()) || key.equalsIgnoreCase(ConfigLoader.Property.SMIME_SIGNING_KEY_PASSWORD.key())))
                 {
                     value = "***";
                 }
@@ -206,7 +211,7 @@ public class SimpleMailWriter extends AbstractFormatPatternWriter
 
             emailBuilder = EmailBuilder.startingBlank();
         }
-        catch (MailException e)
+        catch (Throwable e)
         {
             InternalLogger.log(Level.ERROR, e);
             throw e;
@@ -401,8 +406,8 @@ public class SimpleMailWriter extends AbstractFormatPatternWriter
     @Override
     public void close() throws Exception
     {
-        InternalLogger.log(Level.TRACE, String.format("%s: close", Instant.now()));
-        cachedThreadPool.awaitTermination(30, TimeUnit.SECONDS);
+        InternalLogger.log(Level.TRACE, String.format("%s: close and wait %ds", Instant.now(), CLOSE_WAIT_SECONDS));
+        cachedThreadPool.awaitTermination(CLOSE_WAIT_SECONDS, TimeUnit.SECONDS);
         InternalLogger.log(Level.TRACE, String.format("%s: cachedThreadPool terminated", Instant.now()));
         flush();
 
@@ -454,7 +459,7 @@ public class SimpleMailWriter extends AbstractFormatPatternWriter
         {
             emailBuilder.withPlainText(msgText);
 
-            Email email = emailBuilder.buildEmail();
+            Email email = emailBuilder.buildEmailCompletedWithDefaultsAndOverrides();
 
             try
             {

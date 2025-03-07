@@ -39,7 +39,8 @@ public class SimpleMailWriterTest
         // wait some time until all mails have been sent and arrived in Inbox
         try
         {
-            Thread.sleep(30000);
+            Logger.info("wait for 45s");
+            Thread.sleep(45000);
         }
         catch (InterruptedException e)
         {
