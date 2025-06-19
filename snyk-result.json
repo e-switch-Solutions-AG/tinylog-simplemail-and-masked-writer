@@ -94,14 +94,223 @@
   "ignoreSettings": {
     "adminOnly": false,
     "reasonRequired": false,
-    "disregardFilesystemIgnores": false,
-    "autoApproveIgnores": false
+    "disregardFilesystemIgnores": false
   },
   "summary": "No known vulnerabilities",
+  "depGraph": {
+    "schemaVersion": "1.2.0",
+    "pkgManager": {
+      "name": "maven"
+    },
+    "pkgs": [
+      {
+        "id": "ch.eswitch.tinylog.writers:tinylog-simplemail-and-masked-writer@1.2.1",
+        "info": {
+          "name": "ch.eswitch.tinylog.writers:tinylog-simplemail-and-masked-writer",
+          "version": "1.2.1"
+        }
+      },
+      {
+        "id": "org.tinylog:tinylog-api@2.7.0",
+        "info": {
+          "name": "org.tinylog:tinylog-api",
+          "version": "2.7.0"
+        }
+      },
+      {
+        "id": "org.tinylog:tinylog-impl@2.7.0",
+        "info": {
+          "name": "org.tinylog:tinylog-impl",
+          "version": "2.7.0"
+        }
+      },
+      {
+        "id": "org.simplejavamail:simple-java-mail@8.12.6",
+        "info": {
+          "name": "org.simplejavamail:simple-java-mail",
+          "version": "8.12.6"
+        }
+      },
+      {
+        "id": "org.simplejavamail:core-module@8.12.6",
+        "info": {
+          "name": "org.simplejavamail:core-module",
+          "version": "8.12.6"
+        }
+      },
+      {
+        "id": "com.github.bbottema:jetbrains-runtime-annotations@1.0.2",
+        "info": {
+          "name": "com.github.bbottema:jetbrains-runtime-annotations",
+          "version": "1.0.2"
+        }
+      },
+      {
+        "id": "com.pivovarit:throwing-function@1.6.1",
+        "info": {
+          "name": "com.pivovarit:throwing-function",
+          "version": "1.6.1"
+        }
+      },
+      {
+        "id": "org.slf4j:slf4j-api@2.0.13",
+        "info": {
+          "name": "org.slf4j:slf4j-api",
+          "version": "2.0.13"
+        }
+      },
+      {
+        "id": "jakarta.mail:jakarta.mail-api@2.1.3",
+        "info": {
+          "name": "jakarta.mail:jakarta.mail-api",
+          "version": "2.1.3"
+        }
+      },
+      {
+        "id": "org.eclipse.angus:angus-mail@2.0.3",
+        "info": {
+          "name": "org.eclipse.angus:angus-mail",
+          "version": "2.0.3"
+        }
+      },
+      {
+        "id": "com.sanctionco.jmail:jmail@1.6.3",
+        "info": {
+          "name": "com.sanctionco.jmail:jmail",
+          "version": "1.6.3"
+        }
+      },
+      {
+        "id": "jakarta.activation:jakarta.activation-api@2.1.3",
+        "info": {
+          "name": "jakarta.activation:jakarta.activation-api",
+          "version": "2.1.3"
+        }
+      },
+      {
+        "id": "org.eclipse.angus:angus-activation@2.0.2",
+        "info": {
+          "name": "org.eclipse.angus:angus-activation",
+          "version": "2.0.2"
+        }
+      }
+    ],
+    "graph": {
+      "rootNodeId": "root-node",
+      "nodes": [
+        {
+          "nodeId": "root-node",
+          "pkgId": "ch.eswitch.tinylog.writers:tinylog-simplemail-and-masked-writer@1.2.1",
+          "deps": [
+            {
+              "nodeId": "org.tinylog:tinylog-api:jar:2.7.0:compile"
+            },
+            {
+              "nodeId": "org.tinylog:tinylog-impl:jar:2.7.0:compile"
+            },
+            {
+              "nodeId": "org.simplejavamail:simple-java-mail:jar:8.12.6:compile"
+            }
+          ]
+        },
+        {
+          "nodeId": "org.tinylog:tinylog-api:jar:2.7.0:compile",
+          "pkgId": "org.tinylog:tinylog-api@2.7.0",
+          "deps": []
+        },
+        {
+          "nodeId": "org.tinylog:tinylog-impl:jar:2.7.0:compile",
+          "pkgId": "org.tinylog:tinylog-impl@2.7.0",
+          "deps": []
+        },
+        {
+          "nodeId": "org.simplejavamail:simple-java-mail:jar:8.12.6:compile",
+          "pkgId": "org.simplejavamail:simple-java-mail@8.12.6",
+          "deps": [
+            {
+              "nodeId": "org.simplejavamail:core-module:jar:8.12.6:compile"
+            },
+            {
+              "nodeId": "com.github.bbottema:jetbrains-runtime-annotations:jar:1.0.2:compile"
+            },
+            {
+              "nodeId": "com.pivovarit:throwing-function:jar:1.6.1:compile"
+            },
+            {
+              "nodeId": "org.slf4j:slf4j-api:jar:2.0.13:compile"
+            }
+          ]
+        },
+        {
+          "nodeId": "org.simplejavamail:core-module:jar:8.12.6:compile",
+          "pkgId": "org.simplejavamail:core-module@8.12.6",
+          "deps": [
+            {
+              "nodeId": "jakarta.mail:jakarta.mail-api:jar:2.1.3:compile"
+            },
+            {
+              "nodeId": "org.eclipse.angus:angus-mail:jar:2.0.3:runtime"
+            },
+            {
+              "nodeId": "com.sanctionco.jmail:jmail:jar:1.6.3:compile"
+            }
+          ]
+        },
+        {
+          "nodeId": "com.github.bbottema:jetbrains-runtime-annotations:jar:1.0.2:compile",
+          "pkgId": "com.github.bbottema:jetbrains-runtime-annotations@1.0.2",
+          "deps": []
+        },
+        {
+          "nodeId": "com.pivovarit:throwing-function:jar:1.6.1:compile",
+          "pkgId": "com.pivovarit:throwing-function@1.6.1",
+          "deps": []
+        },
+        {
+          "nodeId": "org.slf4j:slf4j-api:jar:2.0.13:compile",
+          "pkgId": "org.slf4j:slf4j-api@2.0.13",
+          "deps": []
+        },
+        {
+          "nodeId": "jakarta.mail:jakarta.mail-api:jar:2.1.3:compile",
+          "pkgId": "jakarta.mail:jakarta.mail-api@2.1.3",
+          "deps": [
+            {
+              "nodeId": "jakarta.activation:jakarta.activation-api:jar:2.1.3:compile"
+            }
+          ]
+        },
+        {
+          "nodeId": "org.eclipse.angus:angus-mail:jar:2.0.3:runtime",
+          "pkgId": "org.eclipse.angus:angus-mail@2.0.3",
+          "deps": [
+            {
+              "nodeId": "org.eclipse.angus:angus-activation:jar:2.0.2:runtime"
+            }
+          ]
+        },
+        {
+          "nodeId": "com.sanctionco.jmail:jmail:jar:1.6.3:compile",
+          "pkgId": "com.sanctionco.jmail:jmail@1.6.3",
+          "deps": []
+        },
+        {
+          "nodeId": "jakarta.activation:jakarta.activation-api:jar:2.1.3:compile",
+          "pkgId": "jakarta.activation:jakarta.activation-api@2.1.3",
+          "deps": []
+        },
+        {
+          "nodeId": "org.eclipse.angus:angus-activation:jar:2.0.2:runtime",
+          "pkgId": "org.eclipse.angus:angus-activation@2.0.2",
+          "deps": []
+        }
+      ]
+    }
+  },
   "filesystemPolicy": false,
   "uniqueCount": 0,
   "projectName": "ch.eswitch.tinylog.writers:tinylog-simplemail-and-masked-writer",
   "displayTargetFile": "pom.xml",
   "hasUnknownVersions": false,
-  "path": "/codebuild/output/src2375294241/src/codestar-connections.eu-central-1.amazonaws.com/git-http/140096976191/eu-central-1/9665f533-81dd-446a-8dba-07cd6148e8c2/e-switch-Solutions-AG/tinylog-simplemail-and-masked-writer"
+  "path": "/codebuild/output/src225769839/src/codestar-connections.eu-central-1.amazonaws.com/git-http/140096976191/eu-central-1/9665f533-81dd-446a-8dba-07cd6148e8c2/e-switch-Solutions-AG/tinylog-simplemail-and-masked-writer"
 }
