@@ -104,10 +104,10 @@
     },
     "pkgs": [
       {
-        "id": "ch.eswitch.tinylog.writers:tinylog-simplemail-and-masked-writer@1.2.1",
+        "id": "ch.eswitch.tinylog.writers:tinylog-simplemail-and-masked-writer@1.2.2",
         "info": {
           "name": "ch.eswitch.tinylog.writers:tinylog-simplemail-and-masked-writer",
-          "version": "1.2.1"
+          "version": "1.2.2"
         }
       },
       {
@@ -200,7 +200,7 @@
       "nodes": [
         {
           "nodeId": "root-node",
-          "pkgId": "ch.eswitch.tinylog.writers:tinylog-simplemail-and-masked-writer@1.2.1",
+          "pkgId": "ch.eswitch.tinylog.writers:tinylog-simplemail-and-masked-writer@1.2.2",
           "deps": [
             {
               "nodeId": "org.tinylog:tinylog-api:jar:2.7.0:compile"
@@ -312,5 +312,5 @@
   "projectName": "ch.eswitch.tinylog.writers:tinylog-simplemail-and-masked-writer",
   "displayTargetFile": "pom.xml",
   "hasUnknownVersions": false,
-  "path": "/codebuild/output/src225769839/src/codestar-connections.eu-central-1.amazonaws.com/git-http/140096976191/eu-central-1/9665f533-81dd-446a-8dba-07cd6148e8c2/e-switch-Solutions-AG/tinylog-simplemail-and-masked-writer"
+  "path": "/codebuild/output/src2210165123/src/codestar-connections.eu-central-1.amazonaws.com/git-http/140096976191/eu-central-1/9665f533-81dd-446a-8dba-07cd6148e8c2/e-switch-Solutions-AG/tinylog-simplemail-and-masked-writer"
 }
