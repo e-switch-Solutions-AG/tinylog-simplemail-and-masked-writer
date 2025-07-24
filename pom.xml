@@ -190,6 +190,9 @@
                         <arg>--fail-on=all</arg>
                         <arg>--json-file-output=snyk-result.json</arg>
                     </args>
+                    <cli>
+                        <version>1.1297.3</version>
+                    </cli>
                 </configuration>
             </plugin>
         </plugins>
