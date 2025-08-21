@@ -1,0 +1,65 @@
+name: Maven build
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    env:
+      # Organization secrets
+      ESWITCH_ARTIFACOTRY_USERNAME: ${{ secrets.ESWITCH_ARTIFACOTRY_USERNAME }}
+      ESWITCH_ARTIFACOTRY_PASSWORD: ${{ secrets.ESWITCH_ARTIFACOTRY_PASSWORD }}
+      SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+      # Repository secrets
+      SIMPLEJAVAMAIL_SMTP_USERNAME: ${{ secrets.SIMPLEJAVAMAIL_SMTP_USERNAME }}
+      SIMPLEJAVAMAIL_SMTP_PASSWORD: ${{ secrets.SIMPLEJAVAMAIL_SMTP_PASSWORD }}
+      # Repository variables
+      SIMPLEJAVAMAIL_SMTP_HOST: ${{ vars.SIMPLEJAVAMAIL_SMTP_HOST }}
+      SIMPLEJAVAMAIL_IMAP_HOST: ${{ vars.SIMPLEJAVAMAIL_IMAP_HOST }}
+      SIMPLEJAVAMAIL_DEFAULTS_FROM_ADDRESS: ${{ vars.SIMPLEJAVAMAIL_DEFAULTS_FROM_ADDRESS }}
+      SIMPLEJAVAMAIL_DEFAULTS_TO_ADDRESS: ${{ vars.SIMPLEJAVAMAIL_DEFAULTS_TO_ADDRESS }}
+
+    steps:
+    - uses: actions/checkout@v5
+    - name: Set up JDK
+      uses: actions/setup-java@v5
+      with:
+        java-version: '24'
+        distribution: 'zulu'
+        cache: maven
+    - name: set PROJECT_VERSION
+      run: echo "PROJECT_VERSION=$(mvn org.apache.maven.plugins:maven-help-plugin:3.4.0:evaluate -Dexpression=project.version -q -DforceStdout)" >> $GITHUB_ENV
+    - name: env variables
+      run: |
+        echo ESWITCH_ARTIFACOTRY_USERNAME: $ESWITCH_ARTIFACOTRY_USERNAME
+        echo PROJECT_VERSION: $PROJECT_VERSION
+        echo run_attempt: #${{ github.run_attempt }}
+    - name: Build with Maven
+      run: mvn --no-transfer-progress -s settings.xml clean deploy
+    - name: Commit snyk-result
+      uses: EndBug/add-and-commit@v9
+      with:
+        author_name: e-switch Solutions Developer
+        author_email: dev@e-switch.ch
+        message: |
+          snyk-result.json
+          GitHub run #${{ github.run_attempt }}
+        add: 'snyk-result.json'
+    - name: Commit README.md
+      uses: EndBug/add-and-commit@v9
+      with:
+        author_name: e-switch Solutions Developer
+        author_email: dev@e-switch.ch
+        message: |
+          README.md
+          GitHub run #${{ github.run_attempt }}
+        add: 'README.md'
+        tag: 'v${{ env.PROJECT_VERSION }}'
+        tag_push: '--force'
+
+    # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
+    - name: Update dependency graph
+      uses: advanced-security/maven-dependency-submission-action@571e99aab1055c2e71a1e2309b9691de18d6b7d6
