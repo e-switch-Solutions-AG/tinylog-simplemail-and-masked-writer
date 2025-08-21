@@ -36,7 +36,7 @@ jobs:
       run: |
         echo ESWITCH_ARTIFACOTRY_USERNAME: $ESWITCH_ARTIFACOTRY_USERNAME
         echo PROJECT_VERSION: $PROJECT_VERSION
-        echo run_attempt: #${{ github.run_attempt }}
+        echo run_attempt: ${{ github.run_attempt }}
     - name: Build with Maven
       run: mvn --no-transfer-progress -s settings.xml clean deploy
     - name: Commit snyk-result
