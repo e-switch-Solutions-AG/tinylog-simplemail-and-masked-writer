@@ -1,6 +1,183 @@
 {
-  "vulnerabilities": [],
-  "ok": true,
+  "vulnerabilities": [
+    {
+      "id": "SNYK-JAVA-ORGECLIPSEANGUS-12239873",
+      "title": "Improper Neutralization",
+      "CVSSv3": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:C/C:N/I:H/A:N",
+      "credit": [
+        "1ue",
+        "blu3r"
+      ],
+      "semver": {
+        "vulnerable": [
+          "[,2.0.4)"
+        ]
+      },
+      "exploit": "Not Defined",
+      "fixedIn": [
+        "2.0.4"
+      ],
+      "patches": [],
+      "insights": {
+        "triageAdvice": null
+      },
+      "language": "java",
+      "severity": "medium",
+      "cvssScore": 6,
+      "functions": [],
+      "malicious": false,
+      "isDisputed": false,
+      "moduleName": "org.eclipse.angus:angus-mail",
+      "references": [
+        {
+          "url": "https://github.com/eclipse-ee4j/angus-mail/commit/269099b652a0a5c2fa140f1296a18f0fbbea0d44",
+          "title": "GitHub Commit"
+        },
+        {
+          "url": "https://github.com/jakartaee/mail-api/commit/cc9b954f3816f18f1b96dd50b1f8f51b3116462d",
+          "title": "GitHub Commit"
+        },
+        {
+          "url": "https://gitlab.eclipse.org/security/cve-assignement/-/issues/67",
+          "title": "GitLab Issue"
+        },
+        {
+          "url": "https://gitlab.eclipse.org/security/vulnerability-reports/-/issues/290",
+          "title": "GitLab Issue"
+        }
+      ],
+      "cvssDetails": [
+        {
+          "assigner": "NVD",
+          "severity": "high",
+          "cvssV3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
+          "cvssV3BaseScore": 7.5,
+          "modificationTime": "2025-08-07T01:13:20.320304Z"
+        },
+        {
+          "assigner": "Red Hat",
+          "severity": "medium",
+          "cvssV3Vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:N/I:H/A:N",
+          "cvssV3BaseScore": 5.3,
+          "modificationTime": "2025-07-22T05:33:50.028757Z"
+        },
+        {
+          "assigner": "SUSE",
+          "severity": "medium",
+          "cvssV3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:H/A:N",
+          "cvssV3BaseScore": 5.9,
+          "modificationTime": "2025-08-30T11:02:21.241751Z"
+        }
+      ],
+      "cvssSources": [
+        {
+          "type": "primary",
+          "vector": "CVSS:4.0/AV:N/AC:H/AT:N/PR:L/UI:N/VC:N/VI:H/VA:N/SC:N/SI:L/SA:N",
+          "assigner": "Snyk",
+          "severity": "medium",
+          "baseScore": 6,
+          "cvssVersion": "4.0",
+          "modificationTime": "2025-08-29T11:57:03.616698Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:C/C:N/I:H/A:N",
+          "assigner": "Snyk",
+          "severity": "medium",
+          "baseScore": 6.3,
+          "cvssVersion": "3.1",
+          "modificationTime": "2025-08-29T11:57:03.616698Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
+          "assigner": "NVD",
+          "severity": "high",
+          "baseScore": 7.5,
+          "cvssVersion": "3.1",
+          "modificationTime": "2025-08-07T01:13:20.320304Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:N/I:H/A:N",
+          "assigner": "Red Hat",
+          "severity": "medium",
+          "baseScore": 5.3,
+          "cvssVersion": "3.1",
+          "modificationTime": "2025-07-22T05:33:50.028757Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:H/A:N",
+          "assigner": "SUSE",
+          "severity": "medium",
+          "baseScore": 5.9,
+          "cvssVersion": "3.1",
+          "modificationTime": "2025-08-30T11:02:21.241751Z"
+        }
+      ],
+      "description": "## Overview\n[org.eclipse.angus:angus-mail](https://mvnrepository.com/artifact/org.eclipse.angus/angus-mail) is an Angus Mail Provider.\n\nAffected versions of this package are vulnerable to Improper Neutralization via the handling of SMTP message input. An attacker can inject arbitrary SMTP commands by supplying specially crafted input containing carriage return and line feed characters.\n\n**Note:**\r\n\r\nThis is only exploitable if the provided dependency `org.eclipse.angus:smtp` is used.\n\n## Remediation\nUpgrade `org.eclipse.angus:angus-mail` to version 2.0.4 or higher.\n## References\n- [GitHub Commit](https://github.com/eclipse-ee4j/angus-mail/commit/269099b652a0a5c2fa140f1296a18f0fbbea0d44)\n- [GitHub Commit](https://github.com/jakartaee/mail-api/commit/cc9b954f3816f18f1b96dd50b1f8f51b3116462d)\n- [GitLab Issue](https://gitlab.eclipse.org/security/cve-assignement/-/issues/67)\n- [GitLab Issue](https://gitlab.eclipse.org/security/vulnerability-reports/-/issues/290)\n",
+      "epssDetails": {
+        "percentile": "0.08106",
+        "probability": "0.00034",
+        "modelVersion": "v2025.03.14"
+      },
+      "identifiers": {
+        "CVE": [
+          "CVE-2025-7962"
+        ],
+        "CWE": [
+          "CWE-147"
+        ],
+        "GHSA": [
+          "GHSA-9342-92gg-6v29"
+        ]
+      },
+      "packageName": "org.eclipse.angus:angus-mail",
+      "proprietary": false,
+      "creationTime": "2025-08-29T11:57:03.320086Z",
+      "functions_new": [],
+      "alternativeIds": [],
+      "disclosureTime": "2025-07-21T18:32:19Z",
+      "exploitDetails": {
+        "sources": [],
+        "maturityLevels": [
+          {
+            "type": "secondary",
+            "level": "Not Defined",
+            "format": "CVSSv3"
+          },
+          {
+            "type": "primary",
+            "level": "Not Defined",
+            "format": "CVSSv4"
+          }
+        ]
+      },
+      "packageManager": "maven",
+      "mavenModuleName": {
+        "groupId": "org.eclipse.angus",
+        "artifactId": "angus-mail"
+      },
+      "publicationTime": "2025-08-29T11:57:03.601990Z",
+      "severityBasedOn": "CVSS",
+      "modificationTime": "2025-08-30T11:02:21.241751Z",
+      "socialTrendAlert": false,
+      "severityWithCritical": "medium",
+      "from": [
+        "ch.eswitch.tinylog.writers:tinylog-simplemail-and-masked-writer@1.2.2",
+        "org.simplejavamail:simple-java-mail@8.12.6",
+        "org.simplejavamail:core-module@8.12.6",
+        "org.eclipse.angus:angus-mail@2.0.3"
+      ],
+      "upgradePath": [],
+      "isUpgradable": false,
+      "isPatchable": false,
+      "name": "org.eclipse.angus:angus-mail",
+      "version": "2.0.3"
+    }
+  ],
+  "ok": false,
   "dependencyCount": 12,
   "org": "e-switch-ch",
   "policy": "# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.\nversion: v1.25.1\nignore: {}\npatch: {}\n",
@@ -96,7 +273,194 @@
     "reasonRequired": false,
     "disregardFilesystemIgnores": false
   },
-  "summary": "No known vulnerabilities",
+  "summary": "1 vulnerable dependency path",
+  "remediation": {
+    "unresolved": [
+      {
+        "id": "SNYK-JAVA-ORGECLIPSEANGUS-12239873",
+        "title": "Improper Neutralization",
+        "CVSSv3": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:C/C:N/I:H/A:N",
+        "credit": [
+          "1ue",
+          "blu3r"
+        ],
+        "semver": {
+          "vulnerable": [
+            "[,2.0.4)"
+          ]
+        },
+        "exploit": "Not Defined",
+        "fixedIn": [
+          "2.0.4"
+        ],
+        "patches": [],
+        "insights": {
+          "triageAdvice": null
+        },
+        "language": "java",
+        "severity": "medium",
+        "cvssScore": 6,
+        "functions": [],
+        "malicious": false,
+        "isDisputed": false,
+        "moduleName": "org.eclipse.angus:angus-mail",
+        "references": [
+          {
+            "url": "https://github.com/eclipse-ee4j/angus-mail/commit/269099b652a0a5c2fa140f1296a18f0fbbea0d44",
+            "title": "GitHub Commit"
+          },
+          {
+            "url": "https://github.com/jakartaee/mail-api/commit/cc9b954f3816f18f1b96dd50b1f8f51b3116462d",
+            "title": "GitHub Commit"
+          },
+          {
+            "url": "https://gitlab.eclipse.org/security/cve-assignement/-/issues/67",
+            "title": "GitLab Issue"
+          },
+          {
+            "url": "https://gitlab.eclipse.org/security/vulnerability-reports/-/issues/290",
+            "title": "GitLab Issue"
+          }
+        ],
+        "cvssDetails": [
+          {
+            "assigner": "NVD",
+            "severity": "high",
+            "cvssV3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
+            "cvssV3BaseScore": 7.5,
+            "modificationTime": "2025-08-07T01:13:20.320304Z"
+          },
+          {
+            "assigner": "Red Hat",
+            "severity": "medium",
+            "cvssV3Vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:N/I:H/A:N",
+            "cvssV3BaseScore": 5.3,
+            "modificationTime": "2025-07-22T05:33:50.028757Z"
+          },
+          {
+            "assigner": "SUSE",
+            "severity": "medium",
+            "cvssV3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:H/A:N",
+            "cvssV3BaseScore": 5.9,
+            "modificationTime": "2025-08-30T11:02:21.241751Z"
+          }
+        ],
+        "cvssSources": [
+          {
+            "type": "primary",
+            "vector": "CVSS:4.0/AV:N/AC:H/AT:N/PR:L/UI:N/VC:N/VI:H/VA:N/SC:N/SI:L/SA:N",
+            "assigner": "Snyk",
+            "severity": "medium",
+            "baseScore": 6,
+            "cvssVersion": "4.0",
+            "modificationTime": "2025-08-29T11:57:03.616698Z"
+          },
+          {
+            "type": "secondary",
+            "vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:C/C:N/I:H/A:N",
+            "assigner": "Snyk",
+            "severity": "medium",
+            "baseScore": 6.3,
+            "cvssVersion": "3.1",
+            "modificationTime": "2025-08-29T11:57:03.616698Z"
+          },
+          {
+            "type": "secondary",
+            "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
+            "assigner": "NVD",
+            "severity": "high",
+            "baseScore": 7.5,
+            "cvssVersion": "3.1",
+            "modificationTime": "2025-08-07T01:13:20.320304Z"
+          },
+          {
+            "type": "secondary",
+            "vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:N/I:H/A:N",
+            "assigner": "Red Hat",
+            "severity": "medium",
+            "baseScore": 5.3,
+            "cvssVersion": "3.1",
+            "modificationTime": "2025-07-22T05:33:50.028757Z"
+          },
+          {
+            "type": "secondary",
+            "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:H/A:N",
+            "assigner": "SUSE",
+            "severity": "medium",
+            "baseScore": 5.9,
+            "cvssVersion": "3.1",
+            "modificationTime": "2025-08-30T11:02:21.241751Z"
+          }
+        ],
+        "description": "## Overview\n[org.eclipse.angus:angus-mail](https://mvnrepository.com/artifact/org.eclipse.angus/angus-mail) is an Angus Mail Provider.\n\nAffected versions of this package are vulnerable to Improper Neutralization via the handling of SMTP message input. An attacker can inject arbitrary SMTP commands by supplying specially crafted input containing carriage return and line feed characters.\n\n**Note:**\r\n\r\nThis is only exploitable if the provided dependency `org.eclipse.angus:smtp` is used.\n\n## Remediation\nUpgrade `org.eclipse.angus:angus-mail` to version 2.0.4 or higher.\n## References\n- [GitHub Commit](https://github.com/eclipse-ee4j/angus-mail/commit/269099b652a0a5c2fa140f1296a18f0fbbea0d44)\n- [GitHub Commit](https://github.com/jakartaee/mail-api/commit/cc9b954f3816f18f1b96dd50b1f8f51b3116462d)\n- [GitLab Issue](https://gitlab.eclipse.org/security/cve-assignement/-/issues/67)\n- [GitLab Issue](https://gitlab.eclipse.org/security/vulnerability-reports/-/issues/290)\n",
+        "epssDetails": {
+          "percentile": "0.08106",
+          "probability": "0.00034",
+          "modelVersion": "v2025.03.14"
+        },
+        "identifiers": {
+          "CVE": [
+            "CVE-2025-7962"
+          ],
+          "CWE": [
+            "CWE-147"
+          ],
+          "GHSA": [
+            "GHSA-9342-92gg-6v29"
+          ]
+        },
+        "packageName": "org.eclipse.angus:angus-mail",
+        "proprietary": false,
+        "creationTime": "2025-08-29T11:57:03.320086Z",
+        "functions_new": [],
+        "alternativeIds": [],
+        "disclosureTime": "2025-07-21T18:32:19Z",
+        "exploitDetails": {
+          "sources": [],
+          "maturityLevels": [
+            {
+              "type": "secondary",
+              "level": "Not Defined",
+              "format": "CVSSv3"
+            },
+            {
+              "type": "primary",
+              "level": "Not Defined",
+              "format": "CVSSv4"
+            }
+          ]
+        },
+        "packageManager": "maven",
+        "mavenModuleName": {
+          "groupId": "org.eclipse.angus",
+          "artifactId": "angus-mail"
+        },
+        "publicationTime": "2025-08-29T11:57:03.601990Z",
+        "severityBasedOn": "CVSS",
+        "modificationTime": "2025-08-30T11:02:21.241751Z",
+        "socialTrendAlert": false,
+        "packagePopularityRank": 99,
+        "from": [
+          "ch.eswitch.tinylog.writers:tinylog-simplemail-and-masked-writer@1.2.2",
+          "org.simplejavamail:simple-java-mail@8.12.6",
+          "org.simplejavamail:core-module@8.12.6",
+          "org.eclipse.angus:angus-mail@2.0.3"
+        ],
+        "upgradePath": [],
+        "isUpgradable": false,
+        "isPatchable": false,
+        "isPinnable": false,
+        "isRuntime": false,
+        "name": "org.eclipse.angus:angus-mail",
+        "version": "2.0.3",
+        "severityWithCritical": "medium"
+      }
+    ],
+    "upgrade": {},
+    "patch": {},
+    "ignore": {},
+    "pin": {}
+  },
   "depGraph": {
     "schemaVersion": "1.2.0",
     "pkgManager": {
@@ -308,7 +672,11 @@
     }
   },
   "filesystemPolicy": false,
-  "uniqueCount": 0,
+  "filtered": {
+    "ignore": [],
+    "patch": []
+  },
+  "uniqueCount": 1,
   "projectName": "ch.eswitch.tinylog.writers:tinylog-simplemail-and-masked-writer",
   "displayTargetFile": "pom.xml",
   "hasUnknownVersions": false,
