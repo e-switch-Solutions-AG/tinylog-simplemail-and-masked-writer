@@ -2,8 +2,8 @@ version: 0.2
 
 env:
   secrets-manager:
-    ESWITCH_ARTIFACOTRY_USERNAME: "aws/artifactory:username"
-    ESWITCH_ARTIFACOTRY_PASSWORD: "aws/artifactory:password"
+    ESWITCH_ARTIFACTORY_USERNAME: "aws/artifactory:username"
+    ESWITCH_ARTIFACTORY_PASSWORD: "aws/artifactory:password"
     GITHUB_ACCESS_TOKEN: "aws/github/e-switch-ch:access.token"
     SIMPLEJAVAMAIL_SMTP_HOST: "aws/simplejavamail:simplejavamail.smtp.host"
     SIMPLEJAVAMAIL_IMAP_HOST: "aws/simplejavamail:simplejavamail.imap.host"
@@ -41,7 +41,7 @@ phases:
     commands:
       - echo $(date +"%F %T.%N") build phase started
       - pwd
-      - echo ESWITCH_ARTIFACOTRY_USERNAME $ESWITCH_ARTIFACOTRY_USERNAME
+      - echo ESWITCH_ARTIFACTORY_USERNAME $ESWITCH_ARTIFACTORY_USERNAME
       - echo SIMPLEJAVAMAIL_SMTP_HOST $SIMPLEJAVAMAIL_SMTP_HOST
       - echo SIMPLEJAVAMAIL_SMTP_USERNAME $SIMPLEJAVAMAIL_SMTP_USERNAME
       - PROJECT_VERSION=$(mvn org.apache.maven.plugins:maven-help-plugin:3.4.0:evaluate -Dexpression=project.version -q -DforceStdout)
