@@ -118,8 +118,8 @@
       ],
       "description": "## Overview\n[org.eclipse.angus:angus-mail](https://mvnrepository.com/artifact/org.eclipse.angus/angus-mail) is an Angus Mail Provider.\n\nAffected versions of this package are vulnerable to Improper Neutralization via the handling of SMTP message input. An attacker can inject arbitrary SMTP commands by supplying specially crafted input containing carriage return and line feed characters.\n\n**Note:**\r\n\r\nThis is only exploitable if the provided dependency `org.eclipse.angus:smtp` is used.\n\n## Remediation\nUpgrade `org.eclipse.angus:angus-mail` to version 2.0.4 or higher.\n## References\n- [GitHub Commit](https://github.com/eclipse-ee4j/angus-mail/commit/269099b652a0a5c2fa140f1296a18f0fbbea0d44)\n- [GitHub Commit](https://github.com/jakartaee/mail-api/commit/cc9b954f3816f18f1b96dd50b1f8f51b3116462d)\n- [GitLab Issue](https://gitlab.eclipse.org/security/cve-assignement/-/issues/67)\n- [GitLab Issue](https://gitlab.eclipse.org/security/vulnerability-reports/-/issues/290)\n",
       "epssDetails": {
-        "percentile": "0.08106",
-        "probability": "0.00034",
+        "percentile": "0.00817",
+        "probability": "0.00010",
         "modelVersion": "v2025.03.14"
       },
       "identifiers": {
@@ -165,7 +165,7 @@
       "socialTrendAlert": false,
       "severityWithCritical": "medium",
       "from": [
-        "ch.eswitch.tinylog.writers:tinylog-simplemail-and-masked-writer@1.2.2",
+        "ch.eswitch.tinylog.writers:tinylog-simplemail-and-masked-writer@1.2.3",
         "org.simplejavamail:simple-java-mail@8.12.6",
         "org.simplejavamail:core-module@8.12.6",
         "org.eclipse.angus:angus-mail@2.0.3"
@@ -394,8 +394,8 @@
         ],
         "description": "## Overview\n[org.eclipse.angus:angus-mail](https://mvnrepository.com/artifact/org.eclipse.angus/angus-mail) is an Angus Mail Provider.\n\nAffected versions of this package are vulnerable to Improper Neutralization via the handling of SMTP message input. An attacker can inject arbitrary SMTP commands by supplying specially crafted input containing carriage return and line feed characters.\n\n**Note:**\r\n\r\nThis is only exploitable if the provided dependency `org.eclipse.angus:smtp` is used.\n\n## Remediation\nUpgrade `org.eclipse.angus:angus-mail` to version 2.0.4 or higher.\n## References\n- [GitHub Commit](https://github.com/eclipse-ee4j/angus-mail/commit/269099b652a0a5c2fa140f1296a18f0fbbea0d44)\n- [GitHub Commit](https://github.com/jakartaee/mail-api/commit/cc9b954f3816f18f1b96dd50b1f8f51b3116462d)\n- [GitLab Issue](https://gitlab.eclipse.org/security/cve-assignement/-/issues/67)\n- [GitLab Issue](https://gitlab.eclipse.org/security/vulnerability-reports/-/issues/290)\n",
         "epssDetails": {
-          "percentile": "0.08106",
-          "probability": "0.00034",
+          "percentile": "0.00817",
+          "probability": "0.00010",
           "modelVersion": "v2025.03.14"
         },
         "identifiers": {
@@ -441,7 +441,7 @@
         "socialTrendAlert": false,
         "packagePopularityRank": 99,
         "from": [
-          "ch.eswitch.tinylog.writers:tinylog-simplemail-and-masked-writer@1.2.2",
+          "ch.eswitch.tinylog.writers:tinylog-simplemail-and-masked-writer@1.2.3",
           "org.simplejavamail:simple-java-mail@8.12.6",
           "org.simplejavamail:core-module@8.12.6",
           "org.eclipse.angus:angus-mail@2.0.3"
@@ -462,16 +462,16 @@
     "pin": {}
   },
   "depGraph": {
-    "schemaVersion": "1.2.0",
+    "schemaVersion": "1.3.0",
     "pkgManager": {
       "name": "maven"
     },
     "pkgs": [
       {
-        "id": "ch.eswitch.tinylog.writers:tinylog-simplemail-and-masked-writer@1.2.2",
+        "id": "ch.eswitch.tinylog.writers:tinylog-simplemail-and-masked-writer@1.2.3",
         "info": {
           "name": "ch.eswitch.tinylog.writers:tinylog-simplemail-and-masked-writer",
-          "version": "1.2.2"
+          "version": "1.2.3"
         }
       },
       {
@@ -564,7 +564,7 @@
       "nodes": [
         {
           "nodeId": "root-node",
-          "pkgId": "ch.eswitch.tinylog.writers:tinylog-simplemail-and-masked-writer@1.2.2",
+          "pkgId": "ch.eswitch.tinylog.writers:tinylog-simplemail-and-masked-writer@1.2.3",
           "deps": [
             {
               "nodeId": "org.tinylog:tinylog-api:jar:2.7.0:compile"
