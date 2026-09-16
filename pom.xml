@@ -210,7 +210,7 @@
         <repository>
             <id>github_packages</id>
             <name>GitHub Packages</name>
-            <url>https://maven.pkg.github.com/e-switch-Solutions-AG/tinylog-aws-cloudwatch-logs-writer</url>
+            <url>https://maven.pkg.github.com/e-switch-Solutions-AG/tinylog-simplemail-and-masked-writer</url>
         </repository>
         <!--
         <repository>
